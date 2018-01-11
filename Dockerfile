@@ -1,3 +1,7 @@
-FROM alpine
+FROM node:alpine
 
-CMD ["ash"]
+ADD . /app
+
+WORKDIR /app
+
+CMD ["./bin/www"]

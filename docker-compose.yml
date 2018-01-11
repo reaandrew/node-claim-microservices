@@ -3,7 +3,7 @@ services:
   monolith:
     build: .
     ports:
-        - "8001:8000"
+        - "8000:3000"
     logging:
         driver: syslog
         options:
@@ -119,6 +119,16 @@ services:
       - ./config/vault:/config
       - ./config/vault/policies:/policies
     entrypoint: /wait-for-it.sh -t 20 -h consul -p 8500 -s -- vault server -config=/config/with-consul.hcl
+  mongodb:
+      image: mongo:latest
+    # environment:
+    ##  - MONGO_DATA_DIR=/data/db
+    ##  - MONGO_LOG_DIR=/dev/null
+    # volumes:
+    ##- ./data/db:/data/db
+      ports:
+          - 27017:27017
+      command: mongod --smallfiles --logpath=/dev/null # --quiet
 networks:
   elk:
     driver: bridge
