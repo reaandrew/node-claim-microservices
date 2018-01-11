@@ -24,6 +24,10 @@ services:
           syslog-address: "tcp://localhost:5000"
           syslog-format: "rfc3164"
           tag: "kafka"
+    depends_on:
+      - elasticsearch
+      - kibana
+      - logstash
   kafka:
     build: .
     ports:
