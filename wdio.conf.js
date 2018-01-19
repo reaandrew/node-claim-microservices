@@ -1,14 +1,14 @@
-'use strict'
-
 exports.config = {
   capabilities: [
-    { browserName: 'phantomjs' }
+    {
+      browserName: 'phantomjs',
+    },
     // If you want to use other browsers,
     // you may need local Selenium standalone server.
   ],
   services: ['phantomjs'],
   specs: [
-    './test/e2e/*.js'
+    './test/*.js',
   ],
   exclude: [],
   maxInstances: 2,
@@ -22,6 +22,6 @@ exports.config = {
   reporters: ['spec'],
   mochaOpts: {
     ui: 'bdd',
-    timeout: 30000
-  }
-}
+    timeout: 30000,
+  },
+};

@@ -2,14 +2,16 @@ version: '2'
 services:
   monolith:
     build: .
+    volumes:
+        - "./:/app"
     ports:
         - "8000:3000"
-    logging:
-        driver: syslog
-        options:
-          syslog-address: "tcp://localhost:5000"
-          syslog-format: "rfc3164"
-          tag: "registration"
+   #logging:
+   #    driver: syslog
+   #    options:
+   #      syslog-address: "tcp://localhost:5000"
+   #      syslog-format: "rfc3164"
+   #      tag: "registration"
     depends_on:
       - elasticsearch
       - kibana

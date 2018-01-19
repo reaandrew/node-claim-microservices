@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "wdio test/wdio.conf.js"
+    "test": "wdio wdio.conf.js"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -17,6 +17,9 @@
     "serve-favicon": "~2.4.5"
   },
   "devDependencies": {
+    "chai": "^4.1.2",
+    "nodemon": "^1.14.11",
+    "wdio": "^1.0.3",
     "wdio-mocha-framework": "^0.5.12",
     "wdio-phantomjs-service": "^0.2.2",
     "wdio-spec-reporter": "^0.1.3",

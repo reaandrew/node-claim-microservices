@@ -1,7 +1,7 @@
-FROM node:alpine
-
-ADD . /app
+FROM node:0.10.38
 
 WORKDIR /app
 
-CMD ["./bin/www"]
+RUN npm install -g nodemon
+
+CMD ["nodemon","./bin/www"]
