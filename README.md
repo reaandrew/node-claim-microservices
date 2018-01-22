@@ -3,4 +3,5 @@ Requirements:
 
 - Java
 - Phantomjs
+- Webdriverio
 ```
