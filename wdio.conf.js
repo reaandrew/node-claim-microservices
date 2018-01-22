@@ -8,7 +8,7 @@ exports.config = {
   ],
   services: ['phantomjs'],
   specs: [
-    './test/*.js',
+    './test/user_journey/*.js',
   ],
   exclude: [],
   maxInstances: 2,
