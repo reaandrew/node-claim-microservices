@@ -43,6 +43,8 @@ describe('Submitting a new claim', () => {
     browser.setValue('[name="bank_account_number"]', sampleClaim.BankDetails.AccountNumber);
     browser.setValue('[name="bank_sort_code"]', sampleClaim.BankDetails.SortCode);
 
+    browser.click('[name="email"]');
+
     browser.saveScreenshot('./new_claim_form.png');
     browser.click('#submit');
 
