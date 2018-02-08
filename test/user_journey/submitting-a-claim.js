@@ -45,7 +45,7 @@ describe('Submitting a new claim', () => {
 
     browser.click('[name="email"]');
 
-    browser.saveScreenshot('./new_claim_form.png');
+    //browser.saveScreenshot('./new_claim_form.png');
     browser.click('#submit');
 
     expect($('.doc').getTitle()).to.be.equal('Thank you');
